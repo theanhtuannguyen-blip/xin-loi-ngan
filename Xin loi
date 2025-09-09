@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>tha lỗi choaaa anktun cteee</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 60px;
+      background: #ffeef5;
+    }
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 15px 40px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    #noBtn {
+      background: #ccc;
+      color: #333;
+    }
+    #yesBtn {
+      background: #ff99c8;
+      color: #fff;
+    }
+    #message {
+      margin-top: 40px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #d63384;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>ngan đag bùn vs dỗi hỏoo zậy m tha lỗi cho atuann nhaaaa🫰🏻</h1>
+
+  <button id="noBtn" class="btn">Hông</button>
+  <button id="yesBtn" class="btn">Coá</button>
+
+  <div id="message">
+    m tha lỗi choa t thiệc hảaa, đừng dỗi t nữa nhen t bùn lớm ớ, m dỗi t là t bị bịt mỏ á hog bít ns j cho zui âu t thuong m mòoo🥺🫰🏻🪿
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const message = document.getElementById("message");
+
+    const noTexts = ["Không", "Có cục cức", "Đếch", "Đách", "Mơ đi cưng","no no"];
+    const yesTexts = [
+      "ngan ctee bấm coáaaa ik😘",
+      "Bấm zô đây ikk😙",
+      "Ở đây màaaa🪿",
+      "đừng bỏ t mòoo😢",
+      "Chs cùng t ikk mòoo🫰🏻",
+      "Đừng dỗi t nữa nhaaa choa t xin lũiii m mờ t bùn lớm ớ🥺🥺"
+    ];
+
+    let noClickCount = 0;    
+    let yesClickCount = 0;   
+    let yesSize = 20;        
+
+    function advanceYesTextFromNo() {
+      if (yesClickCount < yesTexts.length) {
+        yesBtn.innerText = yesTexts[yesClickCount];
+        yesClickCount++;
+      } else {
+        yesBtn.innerText = yesTexts[yesTexts.length - 1];
+      }
+    }
+
+    noBtn.addEventListener("click", () => {
+      if (noClickCount < noTexts.length) {
+        noBtn.innerText = noTexts[noClickCount];
+      }
+      noClickCount++;
+
+      advanceYesTextFromNo();
+
+      yesSize += 18;
+      yesBtn.style.fontSize = yesSize + "px";
+      yesBtn.style.padding = (yesSize/2) + "px " + (yesSize) + "px";
+
+      if (noClickCount >= noTexts.length) {
+        noBtn.style.display = "none";
+      }
+    });
+
+    yesBtn.addEventListener("click", () => {
+      message.style.display = "block";
+      noBtn.style.display = "none";
+      yesBtn.style.display = "none";
+    });
+  </script>
+</body>
+</html>
